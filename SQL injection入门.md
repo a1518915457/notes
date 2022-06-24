@@ -4,6 +4,8 @@
 
 非常基础的东西，可以用来了解SQL注入的常规用法。
 
+不同的数据库有不同的语法，本文不做深入，需要的同学可以参考[SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
+
 ## 获取隐藏数据
 
 注释掉后面的条件
