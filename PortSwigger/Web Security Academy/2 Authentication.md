@@ -61,3 +61,25 @@ https://portswigger.net/web-security/authentication/password-based/lab-broken-br
 漏洞：可以推测出cookie格式，使用cookie登录失败无限制
 
 操作：使用Burp Intruder和Payload processing爆破
+
+## Lab: Offline password cracking
+
+漏洞：评论存在XSS漏洞
+
+操作：利用XSS漏洞窃取carlos的cookie，再本地爆破（网络搜索）
+
+## Lab: Password reset broken logic
+
+漏洞：重置密码表单中隐藏着要重置的用户名
+
+操作：把隐藏的用户名修改成carlos
+
+## Lab: Password reset poisoning via middleware
+
+漏洞：这一题也不太懂，貌似是用X-Forwarded-Host伪造了重置链接，然后被carlos点击，从而拿到token
+
+## Lab: Password brute-force via password change
+
+漏洞：修改密码表单中隐藏着要修改密码的用户名，修改密码时，如果两个新密码不一致，不会锁定账户。
+
+操作：使用Burp Intruder爆破密码，两个新密码要填不一样的。
